@@ -1,11 +1,22 @@
-// src/components/Sidebar.js
-"use client"; // Ensure the component runs client-side
-
+// Assuming you are using Next.js
+"use client";
 import React, { useState } from "react";
+import Link from "next/link"; // Import Link from Next.js
 
 const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(true); // State to manage if the sidebar is open or not
-  const categories = ["Category 1", "Category 2", "Category 3"]; // Placeholder categories
+  const [isOpen, setIsOpen] = useState(true);
+  const categories = [
+    "Image Generation",
+    "Text Summarization",
+    "Multimodal",
+    "Text Generation",
+    "Speech Recognition",
+    "Code Generation",
+  ];
+
+  // Convert category names to URL-friendly strings
+  const toUrlFriendly = (category) =>
+    category.toLowerCase().replace(/\s+/g, "-");
 
   return (
     <div
@@ -20,24 +31,23 @@ const Sidebar = () => {
         </button>
       </div>
       <div className="flex-grow p-5">
-        <a href="#" className="block mb-2">
-          Home
-        </a>
-        <a href="#" className="block mb-2">
-          Explore
-        </a>
-        <a href="#" className="block mb-2">
-          Library
-        </a>
+        {/* Assuming you have these pages, use Link for navigation */}
+        <Link href="/">
+          <div className="block mb-2">Home</div>
+        </Link>
+        <Link href="/explore">
+          <div className="block mb-2">Explore</div>
+        </Link>
+        <Link href="/library">
+          <div className="block mb-2">Library</div>
+        </Link>
       </div>
       <div className="flex flex-col p-5 bg-gray-700 mt-auto">
-        <a href="#" className="mb-2">
-          Popular Categories
-        </a>
+        <span className="mb-2">Popular Categories</span>
         {categories.map((category, index) => (
-          <a href="#" key={index} className="block mb-2">
-            {category}
-          </a>
+          <Link href={`/categories/${toUrlFriendly(category)}`} key={index}>
+            <div className="block mb-2 cursor-pointer">{category}</div>
+          </Link>
         ))}
       </div>
     </div>

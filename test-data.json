@@ -7,7 +7,7 @@
     "latency": 1970,
     "likes": 9770,
     "service_level": "97.74%",
-    "category": "Text Summarization",
+    "category": "Image Generation",
     "tags": ["NLP", "Efficiency", "Quick Reads"],
     "downloads": 15672,
     "introduction": {
@@ -35,7 +35,7 @@
     "latency": 4720,
     "likes": 3644,
     "service_level": "98.81%",
-    "category": "Image Generation",
+    "category": "Text Summarization",
     "tags": ["Computer Vision", "GANs", "Creativity"],
     "downloads": 4210,
     "introduction": {
@@ -63,7 +63,7 @@
     "latency": 2600,
     "likes": 1743,
     "service_level": "95.39%",
-    "category": "Code Generation",
+    "category": "Image Generation",
     "tags": ["Automation", "Software Development", "Efficiency"],
     "downloads": 3245,
     "introduction": {
@@ -91,7 +91,7 @@
     "latency": 1580,
     "likes": 295,
     "service_level": "98.07%",
-    "category": "Speech Recognition",
+    "category": "Multimodal",
     "tags": ["NLP", "Audio Processing", "Accessibility"],
     "downloads": 5402,
     "introduction": {
@@ -175,7 +175,7 @@
     "latency": 2940,
     "likes": 3721,
     "service_level": "97.59%",
-    "category": "Language Models",
+    "category": "Text Generation",
     "tags": ["Deep Learning", "Transformers", "PyTorch"],
     "downloads": 2298,
     "introduction": {
@@ -231,7 +231,7 @@
     "latency": 4240,
     "likes": 9878,
     "service_level": "96.67%",
-    "category": "Text Generation",
+    "category": "Speech Recognition",
     "tags": ["NLP", "Creativity", "Transformers"],
     "downloads": 8321,
     "introduction": {

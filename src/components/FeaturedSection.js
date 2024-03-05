@@ -6,6 +6,7 @@ import Card from "./Card";
 
 const FeaturedSection = () => {
   const { models } = useContext(AIModelContext);
+  console.log(models);
 
   // Assuming the first 3 models are featured
   const featuredModels = models.slice(0, 3);
