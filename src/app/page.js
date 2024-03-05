@@ -8,17 +8,15 @@ import SearchBar from "@/components/SearchBar";
 
 export default function Home() {
   return (
-    <AIModelProvider>
-      <div className="flex">
-        <Sidebar />
+    <div className="flex">
+      <Sidebar />
 
-        <div className="">
-          <SearchBar />
-          <FeaturedSection />
-          <MainSection />
-          {/* Any other content */}
-        </div>
+      <div className="">
+        <SearchBar />
+        <FeaturedSection />
+        <MainSection />
+        {/* Any other content */}
       </div>
-    </AIModelProvider>
+    </div>
   );
 }
