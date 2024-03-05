@@ -12,7 +12,7 @@ const AIModelProvider = ({ children }) => {
     // Fetch models from the provided URL
     const fetchModels = async () => {
       try {
-        const response = await fetch("https://katb.in/atlan/raw");
+        const response = await fetch("https://katb.in/temporary-data/raw");
         if (response.ok) {
           const models = await response.json();
           setAllModels(models);
