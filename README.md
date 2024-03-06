@@ -90,7 +90,7 @@ For page loading time of this application, I have used the `First Contentful Pai
 The results of the analysis are as follows:
 
 - Homepage load time and performance <strong>`FCP: 0.3s`, `LCP: 0.4s`</strong>:
-  <img width="720" alt="HomePage.jpg" src="https://github.com/amaan14999/atlan-sql-editor/assets/73187712/db65ad8d-07db-401b-9eab-88b0a70925a9">
+  <img width="720" alt="HomePage.jpg" src="https://github.com/amaan14999/AIHub/assets/73187712/7e58d672-4f25-45f3-a7a8-699046293901">
 
 The application is deployed on Vercel which is considered to be one of the fastest hosting platforms.
 
