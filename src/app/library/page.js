@@ -3,14 +3,13 @@ import React, { useContext, useState } from "react";
 import { AIModelContext } from "@/context/AIModelContext";
 import Card from "@/components/Card";
 import AddModelModal from "@/components/AddModelModal";
-import Sidebar from "@/components/Sidebar"; // Make sure this path is correct
-import SearchBar from "@/components/SearchBar"; // Make sure this path is correct
+import Navbar from "@/components/Navbar"; // Make sure this path is correct
 
 export default function LibraryPage() {
-  const { models, likedModels, setSearchQuery } = useContext(AIModelContext);
+  const { models, likedModels } = useContext(AIModelContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Apply the search filter to likedModelsArray and userAddedModels as well
+  // Apply the search filter to likedModelsArray and userAddedModels
   const likedModelsArray = models.filter((model) =>
     likedModels.has(model.model_name)
   );
@@ -18,10 +17,9 @@ export default function LibraryPage() {
   const userAddedModels = models.filter((model) => model.userAdded); // Assuming userAdded flag is set when adding models
 
   return (
-    <div className="flex">
-      <Sidebar />
+    <div className="flex flex-col">
+      <Navbar />
       <div className="flex-grow p-4">
-        <SearchBar />
         <h1 className="text-3xl font-bold my-4">Favorites</h1>
         <button
           onClick={() => setIsModalOpen(true)}
@@ -34,7 +32,7 @@ export default function LibraryPage() {
         {likedModelsArray.length === 0 ? (
           <div className="p-4">No liked models yet.</div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {likedModelsArray.map((model) => (
               <Card key={model.model_name} model={model} />
             ))}
@@ -43,7 +41,7 @@ export default function LibraryPage() {
 
         <h2 className="text-3xl font-bold my-8">My Models</h2>
         {userAddedModels.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {userAddedModels.map((model) => (
               <Card key={model.model_name} model={model} />
             ))}

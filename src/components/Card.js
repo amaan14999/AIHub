@@ -43,7 +43,7 @@ const Card = ({ model }) => {
         </p>
 
         <Link href={`/models/${modelNameForUrl}`} passHref>
-          <div className="text-blue-500 hover:text-blue-600 transition duration-300 mb-4 inline-block">
+          <div className="text-main-bg hover:text-main-bg-dark font-semibold transition duration-300 mb-4 inline-block">
             Know More
           </div>
         </Link>
