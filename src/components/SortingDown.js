@@ -1,27 +1,59 @@
-"use client";
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 const SortingDropdown = ({ onSortChange }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
+  const sortOptions = [
+    { label: "Name", value: "name" },
+    { label: "Likes", value: "likes" },
+    { label: "Downloads", value: "downloads" },
+    { label: "Popularity", value: "popularity" },
+  ];
+
   return (
-    <div className="mb-4 relative">
-      <select
-        onChange={(e) => onSortChange(e.target.value)}
-        className="border-2 border-main-bg bg-white h-10 pl-5 pr-16 rounded-lg text-sm focus:outline-none appearance-none"
-        style={{
-          WebkitAppearance: "none", // This is necessary for some Safari versions
-          backgroundImage: `url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>')`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "right 0.5rem center",
-          backgroundSize: "1.5em",
-        }}
+    <div className="mb-4 relative" ref={dropdownRef}>
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="border-2 border-gray-200 bg-white py-2 px-4 rounded-lg focus:outline-none appearance-none cursor-pointer flex justify-between items-center text-gray-700 font-semibold"
       >
-        <option className="rounded-lg" value="name">
-          Name
-        </option>
-        <option value="likes">Likes</option>
-        <option value="downloads">Downloads</option>
-        <option value="popularity">Popularity</option>
-      </select>
+        <div className="mr-2">Sort:</div>
+        <FontAwesomeIcon icon={isOpen ? faCaretUp : faCaretDown} />
+      </button>
+      {isOpen && (
+        <div
+          className="absolute mt-2 p-2 bg-white rounded-lg shadow-lg"
+          style={{ minWidth: "150px", right: 0 }}
+        >
+          {sortOptions.map((option, index) => (
+            <div
+              key={index}
+              onClick={() => {
+                onSortChange(option.value);
+                setIsOpen(false);
+              }}
+              className="px-4 py-2 hover:bg-main-bg text-gray-800 hover:text-white cursor-pointer rounded-md"
+            >
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

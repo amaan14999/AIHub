@@ -24,7 +24,7 @@ const Card = ({ model }) => {
   );
 
   return (
-    <div className="overflow-hidden shadow-lg m-4 bg-white p-6 rounded-xl flex flex-col justify-between">
+    <div className="overflow-hidden hover:shadow-2xl shadow-lg m-4 bg-white p-6 rounded-xl flex flex-col justify-between border-[1px] border-gray-100">
       <Link href={`/models/${modelNameForUrl}`} passHref>
         <Image
           src={model.img_url}

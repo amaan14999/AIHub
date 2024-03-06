@@ -21,16 +21,9 @@ export default function LibraryPage() {
       <Navbar />
       <div className="flex-grow p-4">
         <h1 className="text-3xl font-bold my-4">Favorites</h1>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="mb-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-        >
-          Add Model
-        </button>
-        {isModalOpen && <AddModelModal onClose={() => setIsModalOpen(false)} />}
 
         {likedModelsArray.length === 0 ? (
-          <div className="p-4">No liked models yet.</div>
+          <div className="p-4">Like Models to add to Favorites</div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {likedModelsArray.map((model) => (
@@ -47,8 +40,16 @@ export default function LibraryPage() {
             ))}
           </div>
         ) : (
-          <div className="p-4">No models added yet.</div>
+          <div className="p-4">Create Models to Show</div>
         )}
+
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="mt-8 mb-4 bg-main-bg hover:bg-main-bg-dark text-white font-bold py-2 px-4 rounded"
+        >
+          Create
+        </button>
+        {isModalOpen && <AddModelModal onClose={() => setIsModalOpen(false)} />}
       </div>
     </div>
   );

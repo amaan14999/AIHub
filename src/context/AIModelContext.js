@@ -62,6 +62,7 @@ const AIModelProvider = ({ children }) => {
         toggleLikeModel,
         likedModels,
         addModel,
+        searchQuery,
       }}
     >
       {isLoading ? <Loader /> : children}

@@ -19,7 +19,7 @@ const FeaturedCard = ({ model }) => {
   );
 
   return (
-    <div className="bg-white py-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 hover:shadow-md px-2 transition duration-300 ease-in-out">
+    <div className="bg-white py-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 hover:shadow-lg px-4 transition duration-200 ease-in-out border-[1px] border-gray-200">
       {/* Image Section with rounded corners */}
       <Link href={`/models/${modelNameForUrl}`}>
         <div className="col-span-1 md:col-span-1 overflow-hidden rounded-lg cursor-pointer">
