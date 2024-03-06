@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <div className="">
       <Navbar />
-
       <div className="p-4">
         <FeaturedSection />
         <MainSection />

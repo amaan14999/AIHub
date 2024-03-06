@@ -12,7 +12,10 @@ const FeaturedSection = () => {
   const featuredModels = models.slice(0, 3);
 
   return (
-    <div className="mx-10 pt-10 pb-5 px-10 rounded-2xl shadow-lg border-[1px] border-gray-200">
+    <div
+      id="next-section"
+      className="mx-10 pt-10 pb-5 px-10 rounded-2xl shadow-lg border-[1px] border-gray-200"
+    >
       <h2 className="text-2xl font-bold mb-4">Developer's Choice</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {featuredModels.map((model) => (

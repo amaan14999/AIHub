@@ -50,7 +50,7 @@ const Card = ({ model }) => {
 
         <div className="flex items-center justify-between mt-4">
           <div>
-            <button onClick={() => toggleLikeModel(model.model_name)}>
+            <button onClick={handleLikeClick}>
               <FontAwesomeIcon
                 icon={isLiked ? fasHeart : farHeart}
                 className="text-red-500 mr-2"
