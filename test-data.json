@@ -3,7 +3,7 @@
     "model_name": "Picsart",
     "model_description": "Cut the clutter, keep the focus: PicsArt's AI background eraser.",
     "popularity_measure": "8.0",
-    "img_url": "images/picsart.png",
+    "img_url": "/images/picsart.png",
     "latency": 1970,
     "likes": 9770,
     "service_level": "97.74%",
@@ -31,7 +31,7 @@
     "model_name": "TLDRThis",
     "model_description": "Don't have time to read it all? TLDRThis has got you covered.",
     "popularity_measure": "9.0",
-    "img_url": "images/tldr-this.png",
+    "img_url": "/images/tldr-this.png",
     "latency": 4720,
     "likes": 3644,
     "service_level": "98.81%",
@@ -59,7 +59,7 @@
     "model_name": "DALL·E 3",
     "model_description": "Turn your wildest ideas into stunning visuals with DALL-E 3.",
     "popularity_measure": "7.5",
-    "img_url": "images/dalle3.png",
+    "img_url": "/images/dalle3.png",
     "latency": 2600,
     "likes": 1743,
     "service_level": "95.39%",
@@ -87,7 +87,7 @@
     "model_name": "Gemini",
     "model_description": "Gemini is a family of powerful language models from Google DeepMind, known for its ability to reason across different kinds of information.",
     "popularity_measure": "9.5",
-    "img_url": "images/gemini.webp",
+    "img_url": "/images/gemini.webp",
     "latency": 1580,
     "likes": 295,
     "service_level": "98.07%",
@@ -115,7 +115,7 @@
     "model_name": "LLaMA",
     "model_description": "LLaMA is a collection of open-source, smaller-sized language models that offer researchers and developers an accessible way to explore and experiment with AI.",
     "popularity_measure": "9.2",
-    "img_url": "images/meta.jpeg",
+    "img_url": "/images/meta.jpeg",
     "latency": 3450,
     "likes": 955,
     "service_level": "96.71%",
@@ -143,7 +143,7 @@
     "model_name": "GPT4 Turbo",
     "model_description": "OpenAI's generative pre-trained transformers, also known as LLMs, are adept at interpreting natural language, code, and images, offering text outputs based on their diverse inputs.",
     "popularity_measure": "8.8",
-    "img_url": "images/dalle3.png",
+    "img_url": "/images/dalle3.png",
     "latency": 2690,
     "likes": 2104,
     "service_level": "98.30%",
@@ -171,7 +171,7 @@
     "model_name": "Bloom BigScience",
     "model_description": "A multilingual maestro, composing text in 46 languages, from poems to code, all at your command. Even tasks unseen, it tackles with ease, a testament to its vast, human-like abilities.",
     "popularity_measure": "8.8",
-    "img_url": "images/bloom.png",
+    "img_url": "/images/bloom.png",
     "latency": 2940,
     "likes": 3721,
     "service_level": "97.59%",
@@ -199,7 +199,7 @@
     "model_name": "Mixtral",
     "model_description": "Mixtral is a versatile AI model designed to blend inputs from multiple data types, delivering cohesive text outputs tailored to specific user needs.",
     "popularity_measure": "8.9",
-    "img_url": "images/mistral-ai.svg",
+    "img_url": "/images/mistral-ai.svg",
     "latency": 3570,
     "likes": 7439,
     "service_level": "95.09%",
@@ -227,7 +227,7 @@
     "model_name": "Whisper",
     "model_description": "Whisper Large is an advanced AI model specializing in speech-to-text conversion, offering high accuracy across various languages and accents.",
     "popularity_measure": "7.8",
-    "img_url": "images/whisper.png",
+    "img_url": "/images/whisper.png",
     "latency": 4240,
     "likes": 9878,
     "service_level": "96.67%",
@@ -255,7 +255,7 @@
     "model_name": "Stable Diffison XL",
     "model_description": "Stable Diffusion XL is a state-of-the-art image generation AI, designed for creating highly detailed and customizable visuals from textual descriptions.",
     "popularity_measure": "9.4",
-    "img_url": "images/stability.png",
+    "img_url": "/images/stability.png",
     "latency": 2520,
     "likes": 7505,
     "service_level": "97.92%",
@@ -283,7 +283,7 @@
     "model_name": "Starcoder",
     "model_description": "Starcoder is an AI model optimized for translating natural language instructions into efficient code, bridging the gap between human communication and software development.",
     "popularity_measure": "8.4",
-    "img_url": "images/starcoder.png",
+    "img_url": "/images/starcoder.png",
     "latency": 1030,
     "likes": 123,
     "service_level": "97.79%",
@@ -305,6 +305,230 @@
     },
     "codesnippets": {
       "python": "from starcoder import StarcoderModel\n# Initialize Starcoder\nstarcoder = StarcoderModel()\n# Input natural language instructions\ninstructions = 'Create a function to calculate the Fibonacci sequence.'\n# Get the code\ncode = starcoder.generate_code(instructions)\nprint(code)"
+    }
+  },
+  {
+    "model_name": "Visionary",
+    "model_description": "Visionary is an advanced AI model tailored for image classification and object detection tasks, equipped with state-of-the-art algorithms for precise recognition and analysis of visual content.",
+    "popularity_measure": "9.1",
+    "img_url": "/images/visionary.png",
+    "latency": 3150,
+    "likes": 6213,
+    "service_level": "97.95%",
+    "category": "Computer Vision",
+    "tags": ["Deep Learning", "CNNs", "Object Detection"],
+    "downloads": 10523,
+    "introduction": {
+      "text": "Visionary sets the standard for image understanding with its robust capabilities in classifying and detecting objects within images. Whether it's identifying everyday objects or detecting anomalies in medical scans, Visionary offers unparalleled accuracy and reliability in visual recognition tasks.",
+      "bullets": [
+        "Accurate image classification and object detection powered by advanced algorithms.",
+        "Versatile applications ranging from retail inventory management to medical diagnosis.",
+        "A reliable tool for tasks requiring precise analysis of visual content."
+      ]
+    },
+    "usage": {
+      "description": "Utilizing Visionary is simple: upload your image, and the model will classify objects within it or detect anomalies, depending on your task. The model supports various image formats and provides detailed insights into the visual content.",
+      "input_format": "JPG, PNG, TIFF",
+      "output_format": "JSON (Object Detection Results)"
+    },
+    "codesnippets": {
+      "python": "from visionary import VisionaryModel\n# Load your image\nimage_path = 'path/to/your/image.jpg'\n# Initialize Visionary model\nvisionary = VisionaryModel()\n# Perform object detection or classification\nresults = visionary.detect_objects(image_path)\nprint(results)"
+    }
+  },
+  {
+    "model_name": "Speechify",
+    "model_description": "Speechify is an advanced speech recognition and synthesis model, capable of converting spoken language into text and vice versa with exceptional accuracy and naturalness.",
+    "popularity_measure": "9.3",
+    "img_url": "/images/speechify.png",
+    "latency": 2380,
+    "likes": 8956,
+    "service_level": "98.42%",
+    "category": "Audio Generation",
+    "tags": ["NLP", "Speech-to-Text", "Text-to-Speech"],
+    "downloads": 11500,
+    "introduction": {
+      "text": "Speechify revolutionizes speech processing with its ability to accurately transcribe spoken language into text and convert text into natural-sounding speech. Whether it's transcribing interviews or creating voiceovers for videos, Speechify delivers exceptional results, making it a preferred choice for various applications.",
+      "bullets": [
+        "Accurate speech-to-text transcription with natural language understanding.",
+        "High-quality text-to-speech synthesis for natural-sounding output.",
+        "Suitable for tasks such as transcription, voice assistants, and accessibility solutions."
+      ]
+    },
+    "usage": {
+      "description": "Using Speechify is straightforward: input your audio file for transcription or provide text for synthesis, and the model will handle the rest. It supports various audio formats and offers customizable options for synthesized speech.",
+      "input_format": "Audio File, Text/String",
+      "output_format": "Text/String, Audio File"
+    },
+    "codesnippets": {
+      "python": "from speechify import SpeechifyModel\n# Load your audio file or text\ninput_data = 'path/to/your/audio.mp3'  # or 'Your text here'\n# Initialize Speechify model\nspeechify = SpeechifyModel()\n# Perform speech-to-text or text-to-speech conversion\noutput = speechify.transcribe(input_data)  # or speechify.synthesize(input_data)\nprint(output)"
+    }
+  },
+  {
+    "model_name": "MindForge",
+    "model_description": "MindForge is a cutting-edge AI model designed for personalized content recommendation and user behavior prediction, leveraging deep learning techniques to understand and adapt to individual preferences.",
+    "popularity_measure": "9.2",
+    "img_url": "/images/mindforge.png",
+    "latency": 2940,
+    "likes": 7689,
+    "service_level": "97.83%",
+    "category": "Multimodal",
+    "tags": ["Deep Learning", "Personalization", "Recommendation"],
+    "downloads": 9800,
+    "introduction": {
+      "text": "MindForge stands at the forefront of personalized content recommendation, harnessing the power of deep learning to understand user preferences and predict future behaviors. Whether it's suggesting movies, music, or products, MindForge delivers tailored recommendations, enhancing user satisfaction and engagement.",
+      "bullets": [
+        "Personalized content recommendation based on user preferences and behavior.",
+        "Predicts future user actions to optimize content delivery and engagement.",
+        "Versatile applications across e-commerce, streaming services, and more."
+      ]
+    },
+    "usage": {
+      "description": "Utilize MindForge by providing user data or historical interactions. The model processes this information to generate personalized recommendations or predict user behavior, enhancing user experience and engagement.",
+      "input_format": "User Data, Interaction History",
+      "output_format": "Recommended Content, Predicted User Behavior"
+    },
+    "codesnippets": {
+      "python": "from mindforge import MindForgeModel\n# Provide user data or interaction history\nuser_data = {'user_id': 123, 'interaction_history': ['movie1', 'movie2', 'music1']}\n# Initialize MindForge model\nmindforge = MindForgeModel()\n# Generate personalized recommendations or predict user behavior\nrecommendations = mindforge.get_recommendations(user_data)\nprint(recommendations)"
+    }
+  },
+  {
+    "model_name": "QuantumNet",
+    "model_description": "QuantumNet is a state-of-the-art quantum machine learning model designed to tackle complex computational problems leveraging the principles of quantum computing.",
+    "popularity_measure": "9.6",
+    "img_url": "/images/quantumnet.png",
+    "latency": 5100,
+    "likes": 10234,
+    "service_level": "99.15%",
+    "category": "Multimodal",
+    "tags": ["Quantum Computing", "Machine Learning", "Optimization"],
+    "downloads": 12500,
+    "introduction": {
+      "text": "QuantumNet represents the forefront of quantum machine learning, harnessing the power of quantum computing to solve computationally intensive tasks with unprecedented efficiency. From optimization problems to data analysis, QuantumNet offers groundbreaking solutions, paving the way for the next generation of computational methodologies.",
+      "bullets": [
+        "Utilizes quantum computing principles for efficient computation.",
+        "Solves complex optimization and machine learning tasks.",
+        "Opens new possibilities for tackling computational challenges."
+      ]
+    },
+    "usage": {
+      "description": "Leverage QuantumNet by providing input data for computational tasks. The model processes this data using quantum computing principles to provide solutions for optimization, machine learning, and other complex tasks, offering unparalleled efficiency and accuracy.",
+      "input_format": "Data/Input Parameters",
+      "output_format": "Computed Solutions/Results"
+    },
+    "codesnippets": {
+      "python": "from quantumnet import QuantumNetModel\n# Provide input data or parameters\ninput_data = {...}\n# Initialize QuantumNet model\nquantumnet = QuantumNetModel()\n# Compute solutions using quantum principles\nsolutions = quantumnet.solve(input_data)\nprint(solutions)"
+    }
+  },
+  {
+    "model_name": "NeuroGen",
+    "model_description": "NeuroGen is an innovative AI model designed for creative content generation, capable of producing diverse and engaging textual and visual outputs.",
+    "popularity_measure": "9.4",
+    "img_url": "/images/neurogen.png",
+    "latency": 3800,
+    "likes": 9210,
+    "service_level": "98.65%",
+    "category": "Multimodal",
+    "tags": ["Text Generation", "Image Generation", "Creativity"],
+    "downloads": 14500,
+    "introduction": {
+      "text": "NeuroGen is a breakthrough in creative AI, offering the ability to generate compelling content across text and image domains. Whether it's crafting captivating stories or producing stunning visuals, NeuroGen empowers users to unleash their creativity and explore new horizons in AI-generated content.",
+      "bullets": [
+        "Creates diverse and engaging textual content with natural language fluency.",
+        "Produces high-quality visuals spanning various styles and themes.",
+        "Enables exploration and experimentation in AI-generated creativity."
+      ]
+    },
+    "usage": {
+      "description": "Experience NeuroGen's creative potential by providing prompts or seed inputs for text or image generation. The model utilizes advanced algorithms to produce imaginative outputs, tailored to your preferences and specifications.",
+      "input_format": "Text/String, Image",
+      "output_format": "Text/String, Image (PNG, JPG)"
+    },
+    "codesnippets": {
+      "python": "from neurogen import NeuroGenModel\n# Provide input prompt or seed image\ninput_data = {...}\n# Initialize NeuroGen model\nneurogen = NeuroGenModel()\n# Generate creative content\noutput = neurogen.generate_content(input_data)\nprint(output)"
+    }
+  },
+  {
+    "model_name": "MetaMind",
+    "model_description": "MetaMind is an AI model designed to understand and interpret human thought processes, enabling it to provide insightful analysis and recommendations across various domains.",
+    "popularity_measure": "9.7",
+    "img_url": "/images/metamind.png",
+    "latency": 4200,
+    "likes": 11523,
+    "service_level": "99.20%",
+    "category": "Audio Generation",
+    "tags": ["Cognitive Analysis", "Insight Generation", "Recommendation"],
+    "downloads": 16200,
+    "introduction": {
+      "text": "MetaMind goes beyond traditional AI models by delving into the realm of cognitive computing, aiming to understand human thought processes and provide meaningful insights. Whether it's analyzing consumer behavior or offering personalized recommendations, MetaMind offers a deeper understanding of complex human interactions.",
+      "bullets": [
+        "Analyzes human thought processes for insightful analysis.",
+        "Provides personalized recommendations based on cognitive understanding.",
+        "Enhances decision-making across various domains."
+      ]
+    },
+    "usage": {
+      "description": "Experience MetaMind's cognitive capabilities by providing input data related to human behavior or decision-making processes. The model analyzes this data to generate insightful analysis and personalized recommendations, facilitating better decision-making and understanding.",
+      "input_format": "Human Behavior Data, Decision-Making Processes",
+      "output_format": "Insightful Analysis, Personalized Recommendations"
+    },
+    "codesnippets": {
+      "python": "from metamind import MetaMindModel\n# Provide input data related to human behavior or decision-making\ninput_data = {...}\n# Initialize MetaMind model\nmetamind = MetaMindModel()\n# Generate insightful analysis and recommendations\noutput = metamind.analyze(input_data)\nprint(output)"
+    }
+  },
+  {
+    "model_name": "DreamWeaver",
+    "model_description": "DreamWeaver is an advanced AI model specializing in creative text generation, capable of crafting immersive narratives, poems, and stories with vivid imagery and compelling characters.",
+    "popularity_measure": "9.8",
+    "img_url": "/images/dreamweaver.png",
+    "latency": 3600,
+    "likes": 10345,
+    "service_level": "99.50%",
+    "category": "Text Generation",
+    "tags": ["Creative Writing", "Narrative Generation", "Imagery"],
+    "downloads": 18500,
+    "introduction": {
+      "text": "DreamWeaver stands out in the realm of creative AI with its ability to weave captivating narratives filled with vivid imagery and rich emotions. Whether it's crafting short stories, poems, or immersive worlds, DreamWeaver sparks imagination and transports readers to fantastical realms.",
+      "bullets": [
+        "Crafts immersive narratives with vivid imagery and compelling characters.",
+        "Generates diverse content including stories, poems, and creative writing.",
+        "Ignites imagination and creativity in readers and writers alike."
+      ]
+    },
+    "usage": {
+      "description": "Unlock the creative potential of DreamWeaver by providing prompts or themes for narrative generation. The model utilizes advanced natural language processing techniques to craft immersive stories and poems that captivate readers' imaginations and emotions.",
+      "input_format": "Text/String (Prompt, Theme)",
+      "output_format": "Text/String (Narrative, Poem)"
+    },
+    "codesnippets": {
+      "python": "from dreamweaver import DreamWeaverModel\n# Provide prompts or themes for narrative generation\ninput_prompt = 'Write a story about a journey into the unknown.'\n# Initialize DreamWeaver model\ndreamweaver = DreamWeaverModel()\n# Generate immersive narratives or poems\noutput_text = dreamweaver.generate_story(input_prompt)\nprint(output_text)"
+    }
+  },
+  {
+    "model_name": "AI Composer",
+    "model_description": "AI-Composer is an advanced AI model specializing in music composition, capable of generating original musical compositions across various genres and styles.",
+    "popularity_measure": "9.5",
+    "img_url": "/images/ai-composer.png",
+    "latency": 3200,
+    "likes": 9876,
+    "service_level": "98.75%",
+    "category": "Audio Generation",
+    "tags": ["Music Composition", "Creative AI", "Artificial Creativity"],
+    "downloads": 16800,
+    "introduction": {
+      "text": "AI-Composer represents the forefront of AI-driven music composition, offering the ability to generate original musical pieces with creativity and sophistication. Whether it's classical symphonies, electronic beats, or jazz improvisations, AI-Composer delivers musical compositions that inspire and captivate audiences.",
+      "bullets": [
+        "Generates original musical compositions across various genres and styles.",
+        "Showcases creativity and sophistication in music generation.",
+        "Inspires and captivates audiences with its musical creations."
+      ]
+    },
+    "usage": {
+      "description": "Experience the musical creativity of AI-Composer by providing parameters or themes for music generation. The model utilizes advanced algorithms to compose original musical pieces tailored to your preferences and specifications.",
+      "input_format": "Parameters, Musical Themes",
+      "output_format": "Musical Composition (Audio File)"
+    },
+    "codesnippets": {
+      "python": "from ai_composer import AIComposerModel\n# Provide parameters or themes for music generation\ninput_parameters = {...}\n# Initialize AI-Composer model\nai_composer = AIComposerModel()\n# Generate original musical compositions\naudio_file = ai_composer.compose_music(input_parameters)\nprint('Music composition saved to:', audio_file)"
     }
   }
 ]

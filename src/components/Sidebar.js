@@ -10,8 +10,10 @@ const Sidebar = () => {
     "Text Summarization",
     "Multimodal",
     "Text Generation",
+    "Audio Generation",
     "Speech Recognition",
     "Code Generation",
+    "Computer Vision",
   ];
 
   // Convert category names to URL-friendly strings
