@@ -16,13 +16,13 @@ export default function LibraryPage() {
   const userAddedModels = models.filter((model) => model.userAdded);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-16">
       <Navbar />
-      <div className="flex-grow p-4">
-        <h1 className="text-3xl font-bold my-4">Favorites</h1>
+      <div className="flex-grow">
+        <h1 className="text-3xl font-bold my-4 pt-16">Favorites</h1>
 
         {likedModelsArray.length === 0 ? (
-          <div className="p-4">Like Models to add to Favorites</div>
+          <div>Like Models to add to Favorites</div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {likedModelsArray.map((model) => (
@@ -31,7 +31,7 @@ export default function LibraryPage() {
           </div>
         )}
 
-        <h2 className="text-3xl font-bold my-8">My Models</h2>
+        <h2 className="text-3xl font-bold mt-16 mb-4">My Models</h2>
         {userAddedModels.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {userAddedModels.map((model) => (
@@ -39,7 +39,7 @@ export default function LibraryPage() {
             ))}
           </div>
         ) : (
-          <div className="p-4">Create Models to Show</div>
+          <div>Create Models to Show</div>
         )}
 
         <button

@@ -5,14 +5,13 @@ import SearchBar from "./SearchBar";
 import Link from "next/link";
 
 const Navbar = () => {
-  const { models } = useContext(AIModelContext);
+  const { models, isSearchBarVisible } = useContext(AIModelContext);
   const [isOpen, setIsOpen] = useState(false);
   const [activePage, setActivePage] = useState("");
   const categories = Array.from(new Set(models.map((model) => model.category)));
   const dropdownRef = useRef(null);
 
   useEffect(() => {
-    // Only run this effect in the browser
     if (typeof window !== "undefined") {
       setActivePage(window.location.pathname);
     }
@@ -39,11 +38,14 @@ const Navbar = () => {
     }`;
 
   return (
-    <nav className="bg-white text-gray-800 p-4">
+    <nav className="bg-white text-gray-800 p-4 py-6">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
           <img src="/images/atlan.png" alt="Logo" className="w-28 mr-4" />
-          <SearchBar />
+
+          <div className="hidden 2md:block">
+            {isSearchBarVisible && <SearchBar />}
+          </div>
         </div>
         <div className="flex items-center space-x-2">
           <Link href="/" passHref>

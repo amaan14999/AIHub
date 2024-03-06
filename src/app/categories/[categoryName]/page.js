@@ -35,7 +35,7 @@ const CategoryNamePage = ({ params }) => {
   }
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-16">
       <Navbar />
       <div className="flex-grow p-4">
         <h2 className="text-xl font-semibold mb-4">

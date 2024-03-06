@@ -7,6 +7,7 @@ const AIModelContext = createContext();
 const AIModelProvider = ({ children }) => {
   const [allModels, setAllModels] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchBarVisible, setSearchBarVisibility] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
 
   // Use a React state instead of localStorage for liked models.
@@ -63,6 +64,8 @@ const AIModelProvider = ({ children }) => {
         likedModels,
         addModel,
         searchQuery,
+        isSearchBarVisible,
+        setSearchBarVisibility,
       }}
     >
       {isLoading ? <Loader /> : children}

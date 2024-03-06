@@ -31,15 +31,24 @@ const MainSection = () => {
   const sortedModels = sortModels(displayModels);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       {searchQuery ? null : (
-        <div className="flex justify-between items-center pt-12 px-4">
-          <h2 className="text-2xl font-bold">Available Models</h2>
+        <div className="flex justify-between items-center px-4 pt-32">
+          <div>
+            <h2 className="text-3xl font-bold">
+              Explore the Frontiers of AI Innovation
+            </h2>
+            <p className="pt-2">
+              Discover the most advanced language and AI models shaping the
+              future, right here.
+            </p>
+          </div>
+
           <SortingDropdown onSortChange={setSortCriteria} />
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mt-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-4">
         {sortedModels.map((model) => (
           <Card key={model.id} model={model} />
         ))}

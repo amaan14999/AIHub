@@ -19,7 +19,7 @@ const FeaturedCard = ({ model }) => {
   );
 
   return (
-    <div className="bg-white py-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 hover:shadow-lg px-4 transition duration-300 ease-in-out border-[1px] border-gray-200">
+    <div className="bg-white py-4 rounded-lg grid sm:grid-cols-3 gap-4 hover:shadow-lg px-4 transition duration-300 ease-in-out border-[1px] border-gray-200">
       {/* Image Section*/}
       <Link href={`/models/${modelNameForUrl}`}>
         <div className="col-span-1 md:col-span-1 overflow-hidden rounded-lg cursor-pointer">
@@ -35,14 +35,15 @@ const FeaturedCard = ({ model }) => {
       </Link>
 
       {/* Content Section */}
-      <div className="col-span-1 md:col-span-2">
+      <div className="col-span-2">
         <h3 className="font-bold text-xl mb-2">{model.model_name}</h3>
         <p className="text-gray-700 text-base mb-4">
           {model.model_description}
         </p>
-        <div className="grid md:grid-cols-3">
+        <div className="grid grid-cols-1 sm:grid-cols-3">
           <div>
             <button
+              className="flex sm:justify-center items-center"
               name="likeButton"
               onClick={() => toggleLikeModel(model.model_name)}
             >
@@ -50,18 +51,19 @@ const FeaturedCard = ({ model }) => {
                 icon={isLiked ? fasHeart : farHeart}
                 className="text-red-500 mr-2"
               />
+
+              <div>{model.likes}</div>
             </button>
-            <span>{model.likes}</span>
           </div>
 
-          <div>
-            <FontAwesomeIcon icon={faDownload} className="ml-4" />
-            <span className="ml-2">{model.downloads}</span>
+          <div className="flex sm:justify-center items-center">
+            <FontAwesomeIcon icon={faDownload} className="" />
+            <div className="ml-2">{model.downloads}</div>
           </div>
 
-          <div>
-            <FontAwesomeIcon icon={faChartLine} className="ml-4" />
-            <span className="ml-2">{model.popularity_measure}</span>
+          <div className="flex sm:justify-center items-center">
+            <FontAwesomeIcon icon={faChartLine} className="" />
+            <div className="ml-2">{model.popularity_measure}</div>
           </div>
         </div>
       </div>

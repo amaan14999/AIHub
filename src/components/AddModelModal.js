@@ -16,18 +16,43 @@ const AddModelModal = ({ onClose }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // Default values for unspecified fields
+    const defaultModelValues = {
+      img_url: "/images/dalle3.webp",
+      likes: 100,
+      downloads: 1000,
+      popularity_measure: "7.5",
+      latency: 1000,
+      service_level: "99%",
+      introduction: {
+        text: "This is a user-added model, providing cutting-edge AI capabilities.",
+        bullets: [
+          "User-contributed model",
+          "Adaptable to various applications",
+          "Efficient and reliable performance",
+        ],
+      },
+      usage: {
+        description:
+          "This model is versatile and can be applied across different domains.",
+        input_format: "Varies",
+        output_format: "Varies",
+      },
+      codesnippets: {
+        python: "# Sample Python code for user-added model\n",
+      },
+      userAdded: true, // Flag to indicate user-added model
+    };
+
     const tagsArray = formData.tags
       .split(" ")
       .filter((tag) => tag.trim() !== "");
     const newModel = {
       ...formData,
       tags: tagsArray,
-      img_url: "/images/dalle3.webp", // Default Values
-      likes: 14,
-      downloads: 149,
-      popularity_measure: 8.4,
-      userAdded: true,
+      ...defaultModelValues,
     };
+
     addModel(newModel);
     onClose();
   };

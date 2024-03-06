@@ -31,15 +31,22 @@ const ExplorePage = () => {
   const sortedModels = sortModels(models);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col px-16">
       <Navbar />
-      <div className="flex justify-between items-center p-4">
-        <div className="text-xl font-medium text-gray-400">
-          {sortedModels.length} Available Models
+      <div className="flex justify-between items-center p-4 pt-16">
+        <div>
+          <div className="text-3xl font-bold">
+            Explore Our Comprehensive Suite of AI Models
+          </div>
+          <p className="pt-2 pb-8">
+            Dive into a world of innovation with our diverse range of
+            cutting-edge AI solutions, each designed to cater to your unique
+            needs and challenges.
+          </p>
         </div>
         <SortingDropdown onSortChange={setSortCriteria} />
       </div>
-      <div className="p-4">
+      <div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {sortedModels.map((model) => (
             <Card key={model.id} model={model} />

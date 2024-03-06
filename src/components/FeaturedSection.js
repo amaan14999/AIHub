@@ -10,20 +10,29 @@ const FeaturedSection = () => {
   const featuredModels = models.slice(0, 3);
 
   return (
-    <div
-      id="next-section"
-      className="mx-10 pt-10 pb-5 px-10 rounded-2xl shadow-lg border-[1px] border-gray-200"
-    >
-      <h2 className="text-2xl font-bold mb-4">Developer's Choice</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {featuredModels.map((model) => (
-          <FeaturedCard key={model.id} model={model} />
-        ))}
-      </div>
-      <p className="mt-5 text-gray-400 font-medium">
-        *Based on community popularity and usage.
+    <>
+      <h1 className="text-3xl font-bold">
+        Expert Picks: The Developer's Selection
+      </h1>
+      <p className="pt-2 pb-8">
+        Handpicked APIs that redefine efficiency and innovation, trusted by
+        developers around the globe.
       </p>
-    </div>
+      <div
+        id="next-section"
+        className="pt-10 pb-5 px-10 rounded-2xl shadow-lg border-[1px] border-gray-200"
+      >
+        <h2 className="text-2xl font-bold mb-4">Developer's Choice</h2>
+        <div className="grid sm:grid-cols-1 1xl:grid-cols-3 lg:grid-cols-2 gap-4">
+          {featuredModels.map((model) => (
+            <FeaturedCard key={model.id} model={model} />
+          ))}
+        </div>
+        <p className="mt-5 text-gray-400 font-medium">
+          *Based on community popularity and usage.
+        </p>
+      </div>
+    </>
   );
 };
 

@@ -20,7 +20,8 @@ import {
 const ModelNamePage = ({ params }) => {
   const { modelName } = params;
   const normalizedModelName = decodeURIComponent(modelName).replace(/-/g, " ");
-  const { models, toggleLikeModel, likedModels } = useContext(AIModelContext);
+  const { models, toggleLikeModel, likedModels, setSearchBarVisibility } =
+    useContext(AIModelContext);
 
   const model = models.find(
     (m) => m.model_name.toLowerCase() === normalizedModelName.toLowerCase()
@@ -32,6 +33,11 @@ const ModelNamePage = ({ params }) => {
   );
 
   const [activeLink, setActiveLink] = useState("introduction");
+
+  useEffect(() => {
+    setSearchBarVisibility(false); // Hide search bar in this page
+    return () => setSearchBarVisibility(true); // Re-show on unmount
+  }, []);
 
   // Update isLiked state when likedModels changes or the model is updated
   useEffect(() => {
@@ -63,7 +69,7 @@ const ModelNamePage = ({ params }) => {
     return <Loader />;
   }
   const getLinkClasses = (link) =>
-    `inline-block w-1/2 text-left py-2 hover:bg-main-bg hover:text-white transition duration-300 p-4 rounded-lg ${
+    `inline-block w-3/5 text-left py-2 hover:bg-main-bg hover:text-white transition duration-300 p-4 rounded-lg ${
       activeLink === link ? "bg-main-bg text-white" : "text-black"
     }`;
 

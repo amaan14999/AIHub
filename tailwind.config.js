@@ -16,8 +16,12 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
       },
       colors: {
-        "main-bg": "#10a37f",
-        "main-bg-dark": "#0a6f57",
+        "main-bg": "#3053dc",
+        "main-bg-dark": "#1d22bd",
+      },
+      screens: {
+        "2md": "860px",
+        "1xl": "1400px",
       },
     },
   },
