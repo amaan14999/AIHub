@@ -32,31 +32,20 @@ const MainSection = () => {
 
   return (
     <div>
-      {/* <div className="mb-4">
-        <label htmlFor="sort" className="mr-2">
-          Sort by:
-        </label>
-        <select
-          id="sort"
-          value={sortCriteria}
-          onChange={(e) => setSortCriteria(e.target.value)}
-          className="border-gray-300 shadow-sm"
-        >
-          <option value="name">Name</option>
-          <option value="likes">Likes</option>
-          <option value="downloads">Downloads</option>
-          <option value="popularity">Popularity</option>
-        </select>
-      </div> */}
       <SortingDropdown onSortChange={setSortCriteria} />
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-4">
         {sortedModels.map((model) => (
           <Card key={model.id} model={model} />
         ))}
       </div>
-      <a href="/explore" className="block mt-4">
-        Explore All
-      </a>
+      <div className="py-10 text-center">
+        <a
+          href="/explore"
+          className=" text-lg font-semibold bg-main-bg text-white py-3 px-8 rounded-lg hover:bg-main-bg-dark transition duration-300 ease-in-out"
+        >
+          Explore All
+        </a>
+      </div>
     </div>
   );
 };

@@ -1,16 +1,21 @@
-"use client";
-
 import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { AIModelContext } from "@/context/AIModelContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
+import {
+  faHeart as fasHeart,
+  faDownload,
+  faChartLine,
+} from "@fortawesome/free-solid-svg-icons";
+import { AIModelContext } from "@/context/AIModelContext"; // Ensure the correct path
 
 const Card = ({ model }) => {
   const { toggleLikeModel, likedModels } = useContext(AIModelContext);
   const isLiked = likedModels.has(model.model_name);
 
   const handleLikeClick = (e) => {
-    e.preventDefault(); // Prevent navigation
+    e.preventDefault(); // Stop the link from triggering
     toggleLikeModel(model.model_name);
   };
 
@@ -19,41 +24,53 @@ const Card = ({ model }) => {
   );
 
   return (
-    <div className="max-w-sm rounded overflow-hidden shadow-lg m-4">
-      <Link href={`/models/${modelNameForUrl}`}>
+    <div className="overflow-hidden shadow-lg m-4 bg-white p-6 rounded-xl flex flex-col justify-between">
+      <Link href={`/models/${modelNameForUrl}`} passHref>
         <Image
-          className="w-full h-auto cursor-pointer"
-          width={"2000"}
-          height={"2000"}
           src={model.img_url}
           alt={model.model_name}
+          width={2000}
+          height={2000}
           layout="responsive"
+          className="cursor-pointer rounded-xl mb-4"
         />
       </Link>
-      <div className="px-6 py-4">
+      <div className="flex flex-col justify-between">
         <div className="font-bold text-xl mb-2">{model.model_name}</div>
-        <p className="text-gray-700 text-base">{model.model_description}</p>
-      </div>
-      <a href={`/models/${modelNameForUrl}`}>Know More</a>
-      <div className="px-6 pt-4 pb-2">
-        <button
-          onClick={handleLikeClick}
-          className={`${
-            isLiked
-              ? "bg-red-500 hover:bg-red-700"
-              : "bg-blue-500 hover:bg-blue-700"
-          } text-white font-bold py-1 px-2 rounded transition duration-300`}
-        >
-          {isLiked ? "Unlike" : "Like"}
-        </button>
-      </div>
-      <div className="px-6 pt-4 pb-2 flex justify-between">
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          Popularity: {model.popularity_measure}
-        </span>
-        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">
-          Downloads: {model.downloads}
-        </span>
+
+        <p className="text-gray-700 text-base mb-4">
+          {model.model_description}
+        </p>
+
+        <Link href={`/models/${modelNameForUrl}`} passHref>
+          <div className="text-blue-500 hover:text-blue-600 transition duration-300 mb-4 inline-block">
+            Know More
+          </div>
+        </Link>
+
+        <div className="flex items-center justify-between mt-4">
+          <div>
+            <button onClick={() => toggleLikeModel(model.model_name)}>
+              <FontAwesomeIcon
+                icon={isLiked ? fasHeart : farHeart}
+                className="text-red-500 mr-2"
+              />
+            </button>
+            <span>{model.likes}</span>
+          </div>
+
+          <div className="text-center">
+            <FontAwesomeIcon icon={faDownload} className="text-gray-600 mr-2" />
+            <span>{model.downloads}</span>
+          </div>
+          <div className="text-center">
+            <FontAwesomeIcon
+              icon={faChartLine}
+              className="text-gray-600 mr-2"
+            />
+            <span>{model.popularity_measure}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
