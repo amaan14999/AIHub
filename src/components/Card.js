@@ -8,7 +8,7 @@ import {
   faDownload,
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
-import { AIModelContext } from "@/context/AIModelContext"; // Ensure the correct path
+import { AIModelContext } from "@/context/AIModelContext";
 
 const Card = ({ model }) => {
   const { toggleLikeModel, likedModels } = useContext(AIModelContext);
@@ -50,7 +50,7 @@ const Card = ({ model }) => {
 
         <div className="flex items-center justify-between mt-4">
           <div>
-            <button onClick={handleLikeClick}>
+            <button name="likeButton" onClick={handleLikeClick}>
               <FontAwesomeIcon
                 icon={isLiked ? fasHeart : farHeart}
                 className="text-red-500 mr-2"

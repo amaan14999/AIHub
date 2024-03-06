@@ -22,14 +22,14 @@ const AddModelModal = ({ onClose }) => {
     const newModel = {
       ...formData,
       tags: tagsArray,
-      img_url: "/images/dalle3.webp", // Provide a valid path to a default image
+      img_url: "/images/dalle3.webp", // Default Values
       likes: 14,
       downloads: 149,
-      popularity_measure: 8.4, // Or set a default numerical value
+      popularity_measure: 8.4,
       userAdded: true,
     };
     addModel(newModel);
-    onClose(); // Close the modal
+    onClose();
   };
 
   return (

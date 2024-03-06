@@ -3,18 +3,17 @@ import React, { useContext, useState } from "react";
 import { AIModelContext } from "@/context/AIModelContext";
 import Card from "@/components/Card";
 import AddModelModal from "@/components/AddModelModal";
-import Navbar from "@/components/Navbar"; // Make sure this path is correct
+import Navbar from "@/components/Navbar";
 
 export default function LibraryPage() {
   const { models, likedModels } = useContext(AIModelContext);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Apply the search filter to likedModelsArray and userAddedModels
   const likedModelsArray = models.filter((model) =>
     likedModels.has(model.model_name)
   );
 
-  const userAddedModels = models.filter((model) => model.userAdded); // Assuming userAdded flag is set when adding models
+  const userAddedModels = models.filter((model) => model.userAdded);
 
   return (
     <div className="flex flex-col">

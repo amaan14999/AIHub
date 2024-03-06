@@ -65,7 +65,7 @@ const Navbar = () => {
             {isOpen && (
               <div
                 className="absolute right-0 mt-2 p-2 bg-white rounded-lg shadow-lg grid grid-cols-2 gap-2"
-                style={{ minWidth: "300px" }} // Increase minWidth as needed
+                style={{ minWidth: "300px" }}
               >
                 {categories.map((category, index) => (
                   <Link

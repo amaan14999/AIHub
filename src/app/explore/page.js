@@ -1,10 +1,9 @@
-// /app/explore/page.js
 "use client";
 import React, { useContext, useState } from "react";
 import { AIModelContext } from "@/context/AIModelContext";
 import Card from "@/components/Card";
-import Navbar from "@/components/Navbar"; // Ensure the path to Navbar is correct
-import SortingDropdown from "@/components/SortingDown"; // Check the component name and path
+import Navbar from "@/components/Navbar";
+import SortingDropdown from "@/components/SortingDown";
 
 const ExplorePage = () => {
   const { models } = useContext(AIModelContext);

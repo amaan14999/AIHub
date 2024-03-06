@@ -1,4 +1,3 @@
-// src/components/FeaturedSection.js
 "use client";
 import React, { useContext } from "react";
 import { AIModelContext } from "../context/AIModelContext";
@@ -8,7 +7,6 @@ import FeaturedCard from "./FeaturedCard";
 const FeaturedSection = () => {
   const { models, searchQuery } = useContext(AIModelContext);
   if (searchQuery) return null;
-  // Assuming the first 3 models are featured
   const featuredModels = models.slice(0, 3);
 
   return (

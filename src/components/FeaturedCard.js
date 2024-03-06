@@ -6,9 +6,9 @@ import {
   faDownload,
   faChartLine,
 } from "@fortawesome/free-solid-svg-icons";
-import { AIModelContext } from "../context/AIModelContext"; // Adjust the path as necessary
-import Image from "next/image"; // Assuming you're using Next.js
-import Link from "next/link"; // Assuming you're using Next.js
+import { AIModelContext } from "../context/AIModelContext";
+import Image from "next/image";
+import Link from "next/link";
 
 const FeaturedCard = ({ model }) => {
   const { toggleLikeModel, likedModels } = useContext(AIModelContext);
@@ -20,7 +20,7 @@ const FeaturedCard = ({ model }) => {
 
   return (
     <div className="bg-white py-4 rounded-lg grid grid-cols-1 md:grid-cols-3 gap-4 hover:shadow-lg px-4 transition duration-300 ease-in-out border-[1px] border-gray-200">
-      {/* Image Section with rounded corners */}
+      {/* Image Section*/}
       <Link href={`/models/${modelNameForUrl}`}>
         <div className="col-span-1 md:col-span-1 overflow-hidden rounded-lg cursor-pointer">
           <Image
@@ -42,7 +42,10 @@ const FeaturedCard = ({ model }) => {
         </p>
         <div className="grid md:grid-cols-3">
           <div>
-            <button onClick={() => toggleLikeModel(model.model_name)}>
+            <button
+              name="likeButton"
+              onClick={() => toggleLikeModel(model.model_name)}
+            >
               <FontAwesomeIcon
                 icon={isLiked ? fasHeart : farHeart}
                 className="text-red-500 mr-2"

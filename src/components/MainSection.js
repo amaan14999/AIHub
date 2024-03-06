@@ -2,7 +2,7 @@
 import React, { useContext, useState } from "react";
 import { AIModelContext } from "../context/AIModelContext";
 import Card from "./Card";
-import SortingDropdown from "./SortingDown"; // Corrected the name
+import SortingDropdown from "./SortingDown";
 
 const MainSection = () => {
   const { models, searchQuery } = useContext(AIModelContext);

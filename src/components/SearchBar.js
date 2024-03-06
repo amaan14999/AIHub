@@ -1,4 +1,3 @@
-// src/components/SearchBar.js
 "use client";
 import React, { useContext } from "react";
 import { AIModelContext } from "../context/AIModelContext";

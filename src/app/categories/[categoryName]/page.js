@@ -1,9 +1,8 @@
-// /app/categories/[categoryName]/page.js
 "use client";
 import React, { useContext } from "react";
 import { AIModelContext } from "@/context/AIModelContext";
 import Card from "@/components/Card";
-import Navbar from "@/components/Navbar"; // Ensure this path is correct for the Navbar component
+import Navbar from "@/components/Navbar";
 
 const CategoryNamePage = ({ params }) => {
   const { categoryName } = params;
@@ -20,6 +19,7 @@ const CategoryNamePage = ({ params }) => {
   const displayCategoryName = normalizedCategoryName.replace(/\b\w/g, (char) =>
     char.toUpperCase()
   );
+
   // Reset search query when entering the category page
   React.useEffect(() => {
     setSearchQuery("");

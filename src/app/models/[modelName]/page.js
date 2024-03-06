@@ -112,7 +112,7 @@ const ModelNamePage = ({ params }) => {
             </div>
             <div className="mt-4 lg:mt-0 lg:flex lg:flex-col items-end">
               <div>
-                <button onClick={handleLike}>
+                <button name="likeButton" onClick={handleLike}>
                   <FontAwesomeIcon
                     icon={isLiked ? fasHeart : farHeart}
                     className="text-red-500 mr-2 font-semibold text-lg"

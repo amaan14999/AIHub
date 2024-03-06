@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import hljs from "highlight.js";
-import "highlight.js/styles/agate.css"; // Choose your style here
+import "highlight.js/styles/agate.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faCopy as fasCopySolid } from "@fortawesome/free-solid-svg-icons";
