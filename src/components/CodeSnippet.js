@@ -6,8 +6,10 @@ import { faCopy } from "@fortawesome/free-regular-svg-icons";
 import { faCopy as fasCopySolid } from "@fortawesome/free-solid-svg-icons";
 
 const CodeSnippet = ({ code, language }) => {
+  // State to track if the code has been copied
   const [isCopied, setIsCopied] = useState(false);
 
+  // Highlight the code when the component mounts
   useEffect(() => {
     hljs.highlightAll();
   }, [code, language]);

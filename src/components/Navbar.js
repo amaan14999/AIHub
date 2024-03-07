@@ -5,10 +5,19 @@ import SearchBar from "./SearchBar";
 import Link from "next/link";
 
 const Navbar = () => {
+  // The AIModelContext provides the models and isSearchBarVisible
   const { models, isSearchBarVisible } = useContext(AIModelContext);
+
+  // Local state to manage the dropdown state of categories section
   const [isOpen, setIsOpen] = useState(false);
+
+  // Local state to manage the active page
   const [activePage, setActivePage] = useState("");
+
+  // Get the unique categories from the models using the global state context
   const categories = Array.from(new Set(models.map((model) => model.category)));
+
+  // Ref to manage the dropdown click outside
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -28,6 +37,7 @@ const Navbar = () => {
     };
   }, []);
 
+  // Helper function to convert category to URL friendly for redirection
   const toUrlFriendly = (category) =>
     category.toLowerCase().replace(/\s+/g, "-");
 

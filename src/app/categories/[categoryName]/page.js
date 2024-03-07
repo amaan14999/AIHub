@@ -5,13 +5,17 @@ import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
 
 const CategoryNamePage = ({ params }) => {
+  //Destructure the category name from the params and clean it up for comparison
   const { categoryName } = params;
   const normalizedCategoryName = decodeURIComponent(categoryName).replace(
     /-/g,
     " "
   );
+
+  //take the models and setSearchQuery from the context
   const { models, setSearchQuery } = useContext(AIModelContext);
 
+  //Filter the models based on the category name
   const categoryModels = models.filter(
     (model) =>
       model.category.toLowerCase() === normalizedCategoryName.toLowerCase()

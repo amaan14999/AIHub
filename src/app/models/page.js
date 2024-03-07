@@ -1,3 +1,5 @@
+// Code: 404 Page
+
 import React from "react";
 import Link from "next/link";
 

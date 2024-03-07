@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,14 +11,27 @@ import {
 import { AIModelContext } from "@/context/AIModelContext";
 
 const Card = ({ model }) => {
+  // Get the likedModels and toggleLikeModel function from the context
   const { toggleLikeModel, likedModels } = useContext(AIModelContext);
+
+  const [likes, setLikes] = useState(model.likes);
+
+  // Check if the model is liked
   const isLiked = likedModels.has(model.model_name);
 
   const handleLikeClick = (e) => {
     e.preventDefault(); // Stop the link from triggering
     toggleLikeModel(model.model_name);
+    if (isLiked) {
+      // If the model is already liked, decrease the likes by one
+      setLikes(likes - 1);
+    } else {
+      // If the model is not liked, increase the likes by one
+      setLikes(likes + 1);
+    }
   };
 
+  // Encode the model name for the URL path
   const modelNameForUrl = encodeURIComponent(
     model.model_name.replace(/\s+/g, "-").toLowerCase()
   );
@@ -56,7 +69,7 @@ const Card = ({ model }) => {
                 className="text-red-500 mr-2"
               />
             </button>
-            <span>{model.likes}</span>
+            <span>{likes}</span>
           </div>
 
           <div className="text-center">

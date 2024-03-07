@@ -58,10 +58,11 @@ const AddModelModal = ({ onClose }) => {
   };
 
   return (
-    <div className="modal-backdrop">
-      <div className="modal">
-        <form onSubmit={handleSubmit}>
+    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 flex justify-center items-center z-50">
+      <div className="bg-white p-5 rounded-lg shadow-lg w-full max-w-md">
+        <form onSubmit={handleSubmit} className="flex flex-col">
           <input
+            className="mb-2 p-2 border border-gray-300 rounded"
             name="model_name"
             value={formData.model_name}
             onChange={handleChange}
@@ -69,6 +70,7 @@ const AddModelModal = ({ onClose }) => {
             required
           />
           <textarea
+            className="mb-2 p-2 border border-gray-300 rounded"
             name="model_description"
             value={formData.model_description}
             onChange={handleChange}
@@ -76,6 +78,7 @@ const AddModelModal = ({ onClose }) => {
             required
           />
           <input
+            className="mb-2 p-2 border border-gray-300 rounded"
             name="category"
             value={formData.category}
             onChange={handleChange}
@@ -83,66 +86,28 @@ const AddModelModal = ({ onClose }) => {
             required
           />
           <input
+            className="mb-2 p-2 border border-gray-300 rounded"
             name="tags"
             value={formData.tags}
             onChange={handleChange}
             placeholder="Tags (space-separated)"
             required
           />
-          <button type="submit">Add Model</button>
-          <button type="button" onClick={onClose}>
+          <button
+            type="submit"
+            className="mb-2 p-2 rounded bg-green-600 text-white cursor-pointer"
+          >
+            Add Model
+          </button>
+          <button
+            type="button"
+            onClick={onClose}
+            className="p-2 rounded bg-red-600 text-white cursor-pointer"
+          >
             Cancel
           </button>
         </form>
       </div>
-      <style jsx>{`
-        .modal-backdrop {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: rgba(0, 0, 0, 0.5);
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 10;
-        }
-        .modal {
-          background: white;
-          padding: 20px;
-          border-radius: 5px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-          width: 500px;
-          max-width: 90%;
-        }
-        form {
-          display: flex;
-          flex-direction: column;
-        }
-        input,
-        textarea {
-          margin-bottom: 10px;
-          padding: 8px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-        }
-        button {
-          cursor: pointer;
-          margin-bottom: 10px;
-          padding: 10px;
-          border-radius: 4px;
-          border: none;
-        }
-        button[type="submit"] {
-          background-color: #10a37f;
-          color: white;
-        }
-        button[type="button"] {
-          background-color: #bf3131;
-          color: white;
-        }
-      `}</style>
     </div>
   );
 };

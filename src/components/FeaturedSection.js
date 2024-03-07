@@ -1,12 +1,15 @@
 "use client";
 import React, { useContext } from "react";
 import { AIModelContext } from "../context/AIModelContext";
-import Card from "./Card";
 import FeaturedCard from "./FeaturedCard";
 
 const FeaturedSection = () => {
+  // Get the models and searchQuery from the context
   const { models, searchQuery } = useContext(AIModelContext);
+
+  // If there is a search query, don't show the featured section
   if (searchQuery) return null;
+
   const featuredModels = models.slice(0, 3);
 
   return (

@@ -14,15 +14,18 @@ import {
   faDownload,
   faChartLine,
   faCheck,
-  faCopy,
 } from "@fortawesome/free-solid-svg-icons";
 
 const ModelNamePage = ({ params }) => {
+  // Destructure the model name from the params and clean it up for comparison
   const { modelName } = params;
   const normalizedModelName = decodeURIComponent(modelName).replace(/-/g, " ");
+
+  // Take the models and setSearchBarVisibility, and toggleLikeModel from the context
   const { models, toggleLikeModel, likedModels, setSearchBarVisibility } =
     useContext(AIModelContext);
 
+  // Find the model based on the normalized model name
   const model = models.find(
     (m) => m.model_name.toLowerCase() === normalizedModelName.toLowerCase()
   );
@@ -32,6 +35,7 @@ const ModelNamePage = ({ params }) => {
     likedModels.has(model ? model.model_name : "")
   );
 
+  // Initialize activeLink state to "introduction" for the sidebar navigation
   const [activeLink, setActiveLink] = useState("introduction");
 
   useEffect(() => {
@@ -46,7 +50,7 @@ const ModelNamePage = ({ params }) => {
 
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.substring(1); // Remove '#' from hash
+      const hash = window.location.hash.substring(1); // Remove '#' from hash when section is clicked
       setActiveLink(hash || "introduction");
     };
 
@@ -59,6 +63,8 @@ const ModelNamePage = ({ params }) => {
       window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
+
+  // Function to handle the like button click and toggle the like state globally
   const handleLike = () => {
     if (model) {
       toggleLikeModel(model.model_name);

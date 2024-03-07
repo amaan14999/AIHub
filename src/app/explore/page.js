@@ -6,9 +6,13 @@ import Navbar from "@/components/Navbar";
 import SortingDropdown from "@/components/SortingDown";
 
 const ExplorePage = () => {
+  // fetch the models from the context
   const { models } = useContext(AIModelContext);
+
+  // state to store the sorting criteria with default value as "name"
   const [sortCriteria, setSortCriteria] = useState("name");
 
+  // function to sort the models based on the sorting criteria
   const sortModels = (models) => {
     switch (sortCriteria) {
       case "likes":
@@ -28,6 +32,7 @@ const ExplorePage = () => {
     }
   };
 
+  // sort the models based on the sorting criteria
   const sortedModels = sortModels(models);
 
   return (

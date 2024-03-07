@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faCaretUp } from "@fortawesome/free-solid-svg-icons";
 
 const SortingDropdown = ({ onSortChange }) => {
+  // Local state to manage the dropdown state
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -19,6 +20,7 @@ const SortingDropdown = ({ onSortChange }) => {
     };
   }, []);
 
+  // Options for sorting
   const sortOptions = [
     { label: "Name", value: "name" },
     { label: "Likes", value: "likes" },

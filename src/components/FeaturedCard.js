@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart as farHeart } from "@fortawesome/free-regular-svg-icons";
 import {
@@ -11,9 +11,22 @@ import Image from "next/image";
 import Link from "next/link";
 
 const FeaturedCard = ({ model }) => {
+  // Get the likedModels and toggleLikeModel function from the context
   const { toggleLikeModel, likedModels } = useContext(AIModelContext);
+
+  // Check if the model is liked in the global state
   const isLiked = likedModels.has(model.model_name);
 
+  // Local state to manage likes count for optimistic UI update
+  const [likes, setLikes] = useState(model.likes);
+
+  // Handle the click event to toggle like state and update likes count
+  const handleClick = () => {
+    toggleLikeModel(model.model_name);
+    setLikes((prevLikes) => (isLiked ? prevLikes - 1 : prevLikes + 1));
+  };
+
+  // Encode the model name for the URL path
   const modelNameForUrl = encodeURIComponent(
     model.model_name.replace(/\s+/g, "-").toLowerCase()
   );
@@ -45,14 +58,14 @@ const FeaturedCard = ({ model }) => {
             <button
               className="flex sm:justify-center items-center"
               name="likeButton"
-              onClick={() => toggleLikeModel(model.model_name)}
+              onClick={handleClick}
             >
               <FontAwesomeIcon
                 icon={isLiked ? fasHeart : farHeart}
                 className="text-red-500 mr-2"
               />
 
-              <div>{model.likes}</div>
+              <div>{likes}</div>
             </button>
           </div>
 

@@ -5,9 +5,13 @@ import Card from "./Card";
 import SortingDropdown from "./SortingDown";
 
 const MainSection = () => {
+  // The AIModelContext provides the models and searchQuery
   const { models, searchQuery } = useContext(AIModelContext);
+
+  // State to track the sorting criteria
   const [sortCriteria, setSortCriteria] = useState("");
 
+  // Function to sort the models based on the sortCriteria
   const sortModels = (models) => {
     switch (sortCriteria) {
       case "likes":
@@ -27,7 +31,10 @@ const MainSection = () => {
     }
   };
 
+  // If there is a search query, use the models as is, if not, use the first 8 models
   const displayModels = searchQuery ? models : models.slice(3, 11);
+
+  // Sort the models based on the sortCriteria
   const sortedModels = sortModels(displayModels);
 
   return (

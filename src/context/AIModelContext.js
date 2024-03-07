@@ -5,12 +5,19 @@ import Loader from "@/components/Loader";
 const AIModelContext = createContext();
 
 const AIModelProvider = ({ children }) => {
+  // State to manage the models
   const [allModels, setAllModels] = useState([]);
+
+  // State to manage the search query
   const [searchQuery, setSearchQuery] = useState("");
+
+  // State to manage the visibility of the search bar
   const [isSearchBarVisible, setSearchBarVisibility] = useState(true);
+
+  // State to manage the loading state
   const [isLoading, setIsLoading] = useState(false);
 
-  // Use a React state instead of localStorage for liked models.
+  // Usestate for liked models.
   const [likedModels, setLikedModels] = useState(new Set());
 
   const addModel = (newModel) => {
@@ -18,6 +25,7 @@ const AIModelProvider = ({ children }) => {
     setAllModels((currentModels) => [...currentModels, modelWithFlag]);
   };
 
+  // Fetch the models from the API(https://katb.in/atlan-fe-task/raw) and set the state
   useEffect(() => {
     setIsLoading(true);
     const fetchModels = async () => {
@@ -39,6 +47,7 @@ const AIModelProvider = ({ children }) => {
     fetchModels();
   }, []);
 
+  // Function to toggle the liked models and update the state
   const toggleLikeModel = (modelName) => {
     setLikedModels((currentLikes) => {
       const updatedLikes = new Set(currentLikes);
@@ -51,6 +60,7 @@ const AIModelProvider = ({ children }) => {
     });
   };
 
+  // Filter the models based on the search query
   const filteredModels = allModels.filter((model) =>
     model.model_name.toLowerCase().includes(searchQuery.toLowerCase())
   );
