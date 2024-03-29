@@ -25,12 +25,12 @@ const AIModelProvider = ({ children }) => {
     setAllModels((currentModels) => [...currentModels, modelWithFlag]);
   };
 
-  // Fetch the models from the API(https://katb.in/atlan-fe-task/raw) and set the state
+  // Fetch the models from the API(https://katb.in/ixamaxumoxa/raw) and set the state
   useEffect(() => {
     setIsLoading(true);
     const fetchModels = async () => {
       try {
-        const response = await fetch("https://katb.in/atlan-fe-task/raw");
+        const response = await fetch("https://katb.in/ixamaxumoxa/raw");
         if (response.ok) {
           const models = await response.json();
           setAllModels(models);
