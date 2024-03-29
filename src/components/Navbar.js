@@ -51,7 +51,10 @@ const Navbar = () => {
     <nav className="bg-white text-gray-800 p-4 py-6">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center">
-          <img src="/images/atlan.png" alt="Logo" className="w-28 mr-4" />
+          // <img src="/images/atlan.png" alt="Logo" className="w-28 mr-4" />
+          <Link href="/" passHref>
+            <div className="text-3xl font-bold cursor-pointer">AI Hub</div>
+          </Link>
 
           <div className="hidden 2md:block">
             {isSearchBarVisible && <SearchBar />}
