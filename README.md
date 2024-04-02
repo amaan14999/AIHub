@@ -3,13 +3,13 @@
 [![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-# Atlan Frontend Task: AI/LLM Marketplace
+# AI/LLM Marketplace
 
 Link to the application: [AiHub](https://ai-hub-ten.vercel.app/)
 
 ## Introduction
 
-This is a simple web application that allows users to browse and search for AI/LLM models. The application is developed as a part of the Atlan Frontend Task.
+This is a simple web application that allows users to browse and search for AI/LLM models.
 </br>
 The application is built using React and Tailwind CSS.
 
@@ -93,58 +93,6 @@ The results of the analysis are as follows:
   <img width="720" alt="HomePage.jpg" src="https://github.com/amaan14999/AIHub/assets/73187712/7e58d672-4f25-45f3-a7a8-699046293901">
 
 The application is deployed on Vercel which is considered to be one of the fastest hosting platforms.
-
-## Problem Statement
-
-### Hiring Task | FE Intern - Marketplace
-
-#### Scenario
-
-Given the recent surge in interest in AI models and LLMs, you have been tasked with building an application that showcases the various models deployed by organisations and developers alike. The application will go live as-is, so it is up you to develop an interface which is informative and enticing. The application should capture the nuances of a real-life production application, and show the various models available, their categories, and should allow end-users to select and explore any one model.
-
-#### Breakdown
-
-##### 💡 Ideation
-
-- **A space for browsing models**. This page should list down the various models available on your platform. What models you choose to display, how they’re laid out, and what information is shown up-front is completely up to you.
-    <aside>
-    ⚠️ Just keep one thing in mind: don’t create a list of models within the client-side code. Instead, create a mock API using a free REST API like [{JSON} Placeholder](https://jsonplaceholder.typicode.com/), and then leverage this API to enrich your interface.
-    
-    </aside>
-
-- **A wall to display featured models.** Some models are shown more love than others, and your application should show these loved models on a separate wall of their own. Tell us why these models are featured: have they been viewed a lot of times, maybe certain devs have added them to their list of favourite models?
-- **A space for diving into specific models.** What if a developer wants to check out a certain model? Every model should also have a dedicated page that allow end users to dive deeper into the given model. If you want to sprinkle in additional details, go right ahead, but a very minimal page would ideally contain: a description of the model and the provider, a snippet of code showing an example of using it, potential use cases.
-
-#### Brownie Points
-
-- **A space for creating these models.** Not the models, per-se, just a space for providers to upload information about their models, so that they can be shown in the “Explore” space. Remember, that this should tie in seamlessly with the application that you’ve built already.
-- **“Try it out”**. Let users get their hands dirty with a specific model. Add a space where they can try a model without writing code. For example, an image-to-text model could have a space for uploading an image and then the model could output some text. Think of ways you can add this to the API you created above.
-- **Let your creativity run amok.** Think of things that could add value to your application, if you have some extra time on your hands, that is.
-
-#### Judging Criteria
-
-- The overall structure and planning of your application's functionalities, both core and advanced.
-- How well you anticipated and built for the most basic needs of your users.
-- The reasoning behind choosing the specific features that you developed for your application.
-- The value added by the additional features that you included in your application.
-- The layout structure of your interface and how that enhances the overall user experience.
-- Anticipation and preparation for the user actions within your interface.
-- Quality and structure of your code, and the overall readability.
-- The load time of your application and the time taken to re-render.
-- The performance of your web application in terms of speed and efficiency.
-- Adherence to the fundamental best practices of coding.
-
-##### Notes
-
-1. Use a JavaScript framework for your application, such as [React](https://reactjs.org/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), or any other framework. **DO NOT CODE IN VANILLA JAVASCRIPT.**
-2. Host your code on a version control system, such as GitHub, GitLab or BitBucket. **SEND US THE LINK TO YOUR PROJECT, NOT A ZIP FILE.**
-3. Deploy your application on services such as [Netlify](https://www.netlify.com/) or [Vercel](https://vercel.com/), and send us the link to your deployed project. **DO NOT EXPECT THE JUDGE TO INSTALL YOUR APPLICATION ON A LOCAL INSTANCE.**
-4. You are free to use any external library and dependency, as long as you mention it in the README.
-5. In the README of your project, include the following details:
-   1. A basic overview of your project.
-   2. The JavaScript framework you chose, along with any major plugins or packages you installed.
-   3. The page load time of your application, and how you measured this time.
-   4. Any optimisations you did to decrease the load time or increase performance.
 
 ## 👨‍💻 Contributors
 
